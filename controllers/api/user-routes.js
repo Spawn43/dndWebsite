@@ -1,6 +1,27 @@
 const router = require('express').Router();
 const User = require("../../models/User.js");
+const { v4: uuidv4 } = require('uuid');
 
+const v4options = {
+    random: [
+        0x10,
+        0x91,
+        0x56,
+        0xbe,
+        0xc4,
+        0xfb,
+        0xc1,
+        0xea,
+        0x71,
+        0xb4,
+        0xef,
+        0xe1,
+        0x67,
+        0x1c,
+        0x58,
+        0x36,
+    ],
+};
 // Get all users
 router.get('/', (req, res) => {
     User.findAll({
@@ -55,7 +76,11 @@ router.get('/:id', (req, res) => {
 
 // Create a user
 router.post('/', (req, res) => {
+
+
+
     User.create({
+        id: uuidv4(v4options),
         username: req.body.username,
         password: req.body.password,
         email: req.body.email
