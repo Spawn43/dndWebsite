@@ -11,7 +11,7 @@ if (process.env.JAWSDB_URL) {
         password: 'test',
         host: 'localhost',
         dialect: 'mysql',
-        // schema:'test',
+        // schema:'schema',
         database:'dndDev',
         dialectOptions: {
             decimalNumbers: true,
