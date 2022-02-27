@@ -38,7 +38,7 @@ Table.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "FUCKINGKILLME"
+    modelName: "table"
 })
 
 module.exports = Table
